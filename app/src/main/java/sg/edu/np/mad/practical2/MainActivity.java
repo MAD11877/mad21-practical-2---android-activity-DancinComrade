@@ -13,7 +13,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button btn = (Button)findViewById(R.id.button);
-        User userObj = new User();
+
+        // Issue: initialise it with values and use those values to initialise the textview
+        User userObj = new User("Rick Astley", "Never gonna give you up.",
+                1, true);
+
+        if (userObj.Followed) {
+            btn.setText("UNFOLLOW");
+        }
+        else {
+            btn.setText("FOLLOW");
+        }
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
