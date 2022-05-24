@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +25,12 @@ public class MainActivity extends AppCompatActivity {
         else {
             btn.setText("FOLLOW");
         }
+
+        TextView usernameView = (TextView) findViewById(R.id.textView2);
+        TextView desView = (TextView) findViewById(R.id.textView);
+
+        usernameView.setText(userObj.Name);
+        desView.setText(userObj.Description);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
